@@ -1,4 +1,13 @@
 
+#This is a helper function which shows a simple progress bar that
+#you can include in any of your scripts
+#
+#
+#Usage:
+#	showProgress <current_value> <max_value>
+#	current_value: the SI.no of current value its processing
+#	max_value: The max number of values that needs processing
+
 function showProgress
 {
 cur=$1
