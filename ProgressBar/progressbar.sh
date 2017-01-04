@@ -25,3 +25,39 @@ echo -ne "\n"
 fi
 }
 
+function showBusy
+{
+process_id=$1
+interval=0.2
+MESSAGE="LOADING"
+while true
+do
+for i in `seq 1 50`;
+do
+	pattern=""
+	for j in `seq 1 50`;
+	do
+		if [ $i -eq $j ]
+		then
+			pattern=${pattern}"${MESSAGE}"
+		fi
+		pattern=${pattern}"*"
+	done
+	echo -ne " ${pattern} \r"
+	sleep ${interval}
+	running=`ps aux | awk '{ print $2 }' | grep ${process_id} | wc -l`
+	if [ ${running} -eq 0 ]
+	then
+		echo ""
+		return
+	fi
+done
+done
+}
+
+
+
+
+
+
+
