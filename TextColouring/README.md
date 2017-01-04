@@ -3,4 +3,4 @@ supported colors are
 { RED | GREEN | BLUE | ORANGE | CYAN | BLACK | PURPLE }
 
 USAGE: 
-	colorPrint RED "<TEXT YOU WISH TO PRINT>"
+	colorPrint RED <TEXT YOU WISH TO PRINT>
